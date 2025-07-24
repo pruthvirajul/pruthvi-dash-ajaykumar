@@ -80,14 +80,14 @@ logger.info('Environment Configuration:', {
 
 // Server Configuration
 const allowedOrigins = [
-  'http://44.223.23.145:8012', // Login
-  'http://44.223.23.145:8013', // Signup
-  'http://44.223.23.145:8010', // Forgot
-  'http://44.223.23.145:8011', // Dashboard
-  'http://44.223.23.145:3401', // Backend
-  'http://127.0.0.1:5500',
-  'http://127.0.0.1:5502',
-  process.env.FRONTEND_URL || 'http://44.223.23.145:8012',
+  'http://51.20.37.128:8012', // Login
+  'http://51.20.37.128:8013', // Signup
+  'http://51.20.37.128:8010', // Forgot
+  'http://51.20.37.128:8011', // Dashboard
+  'http://51.20.37.128:3401', // Backend
+  'http://51.20.37.128:5500',
+  'http://51.20.37.128:5502',
+  process.env.FRONTEND_URL || 'http://51.20.37.128:8012',
 ];
 
 // Enhanced CORS setup
@@ -149,7 +149,7 @@ const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'postgres',
   database: process.env.DB_NAME || 'new_employee_db',
-  password: process.env.DB_PASSWORD || 'admin123',
+  password: process.env.DB_PASSWORD || 'admin321',
   port: process.env.DB_PORT || 5432,
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
@@ -253,7 +253,7 @@ async function handleTokenRefresh(req, res, next) {
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
       maxAge: 15 * 60 * 1000,
-      domain: '44.223.23.145'
+      domain: '51.20.37.128'
     });
 
     req.user = decoded;
@@ -499,7 +499,7 @@ app.post('/api/login', async (req, res) => {
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
       maxAge: 15 * 60 * 1000,
-      domain: '44.223.23.145'
+      domain: '51.20.37.128'
     });
 
     res.cookie('refreshToken', refreshToken, {
@@ -507,7 +507,7 @@ app.post('/api/login', async (req, res) => {
       secure: process.env.NODE_ENV === 'production',
       sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'strict',
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      domain: '44.223.23.145'
+      domain: '51.20.37.128'
     });
 
     const { password: _, ...userData } = user;
@@ -621,11 +621,11 @@ app.post('/api/logout', verifyToken, async (req, res) => {
     await pool.query('DELETE FROM sessions WHERE token = $1', [refreshToken]);
 
     res.clearCookie('accessToken', {
-      domain: '44.223.23.145',
+      domain: '51.20.37.128',
       path: '/'
     });
     res.clearCookie('refreshToken', {
-      domain: '44.223.23.145',
+      domain: '51.20.37.128',
       path: '/'
     });
 

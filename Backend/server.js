@@ -75,47 +75,47 @@ logger.info('Environment Configuration:', {
 });
 
 const allowedOrigins = [
-  'http://44.223.23.145:8012',
-  'http://44.223.23.145:8013',
-  'http://44.223.23.145:8010',
-  'http://44.223.23.145:8057',
-  'http://44.223.23.145:3404',
-  'http://127.0.0.1:5500',
-  'http://127.0.0.1:5501',
-  'http://127.0.0.1:5502',
-  'http://localhost:8012',
-  'http://44.223.23.145:8026',
-  'http://44.223.23.145:8046',
-  'http://3.85.61.23:7019',
-  'http://3.85.61.23:7020',
-  'http://3.85.61.23:8020',
-  'http://3.85.61.23:8021',
-  'http://44.223.23.145:8051',
-  'http://44.223.23.145:8025',
-  'http://44.223.23.145:8045',
-  'http://44.223.23.145:8049',
-  'http://44.223.23.145:8039',
-  'http://44.223.23.145:8043',
-  'http://44.223.23.145:8014',
-  'http://44.223.23.145:8053',
-  'http://44.223.23.145:8047',
-  'http://44.223.23.145:8055',
-  'http://44.223.23.145:8027',
-  'http://44.223.23.145:8041',
-  'http://44.223.23.145:8031',
-  'http://44.223.23.145:8033',
-  'http://44.223.23.145:8052',
-  'http://44.223.23.145:8040',
-  'http://44.223.23.145:8036',
-  'http://44.223.23.145:8044',
-  'http://44.223.23.145:8015',
-  'http://44.223.23.145:8054',
-  'http://44.223.23.145:8048',
-  'http://44.223.23.145:8056',
-  'http://44.223.23.145:8028',
-  'http://44.223.23.145:8042',
-  'http://44.223.23.145:8032',
-  process.env.FRONTEND_URL || 'http://44.223.23.145:3404'
+  'http://51.20.37.128:8012',
+  'http://51.20.37.128:8013',
+  'http://51.20.37.128:8010',
+  'http://51.20.37.128:8057',
+  'http://51.20.37.128:3404',
+  'http://51.20.37.128:5500',
+  'http://51.20.37.128:5501',
+  'http://51.20.37.128:5502',
+  'http://51.20.37.128:8012',
+  'http://51.20.37.128:8026',
+  'http://51.20.37.128:8046',
+  'http://51.20.37.128:7019',
+  'http://51.20.37.128:7020',
+  'http://51.20.37.128:8020',
+  'http://51.20.37.128:8021',
+  'http://51.20.37.128:8051',
+  'http://51.20.37.128:8025',
+  'http://51.20.37.128:8045',
+  'http://51.20.37.128:8049',
+  'http://51.20.37.128:8039',
+  'http://51.20.37.128:8043',
+  'http://51.20.37.128:8014',
+  'http://51.20.37.128:8053',
+  'http://51.20.37.128:8047',
+  'http://51.20.37.128:8055',
+  'http://51.20.37.128:8027',
+  'http://51.20.37.128:8041',
+  'http://51.20.37.128:8031',
+  'http://51.20.37.128:8033',
+  'http://51.20.37.128:8052',
+  'http://51.20.37.128:8040',
+  'http://51.20.37.128:8036',
+  'http://51.20.37.128:8044',
+  'http://51.20.37.128:8015',
+  'http://51.20.37.128:8054',
+  'http://51.20.37.128:8048',
+  'http://51.20.37.128:8056',
+  'http://51.20.37.128:8028',
+  'http://51.20.37.128:8042',
+  'http://51.20.37.128:8032',
+  process.env.FRONTEND_URL || 'http://51.20.37.128:3404'
 ];
 
 app.use(cors({
@@ -167,7 +167,7 @@ const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'postgres-ajay',
   database: process.env.DB_NAME || 'new_employee_db',
-  password: process.env.DB_PASSWORD || 'admin123',
+  password: process.env.DB_PASSWORD || 'admin321',
   port: process.env.DB_PORT || 5432,
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
@@ -909,8 +909,8 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3404;
 server.listen(PORT, '0.0.0.0', () => {
-  logger.info(`Server running on http://44.223.23.145:${PORT}`);
-  logger.info(`WebSocket server running on ws://44.223.23.145:${PORT}`);
+  logger.info(`Server running on http://51.20.37.128:${PORT}`);
+  logger.info(`WebSocket server running on ws://51.20.37.128:${PORT}`);
   logger.info(`Allowed CORS origins: ${allowedOrigins.join(', ')}`);
   logger.info(`Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`Database config:`, {

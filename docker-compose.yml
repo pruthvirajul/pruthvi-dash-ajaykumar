@@ -6,7 +6,7 @@ services:
     image: postgres:13
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: admin123
+      POSTGRES_PASSWORD: admin321
       POSTGRES_DB: new_employee_db
     ports:
       - "5404:5432"
@@ -37,7 +37,7 @@ services:
     networks:
       - app_network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3404/health"]
+      test: ["CMD", "curl", "-f", "http://51.20.37.128:3404/health"]
       interval: 10s
       timeout: 5s
       retries: 3

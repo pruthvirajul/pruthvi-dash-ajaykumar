@@ -80,16 +80,16 @@ logger.info('Environment Configuration:', {
 
 // Server Configuration
 const allowedOrigins = [
-  'http://44.223.23.145:8012',
-  'http://44.223.23.145:8013',
-  'http://44.223.23.145:8010',
-  'http://44.223.23.145:3404',
-  'http://127.0.0.1:5500',
-  'http://127.0.0.1:5502',
-  'http://44.223.23.145:8012',
-  'http://44.223.23.145:8013',
-  'http://44.223.23.145:8010',
-  process.env.FRONTEND_URL || 'http://44.223.23.145:8012',
+  'http://51.20.37.128:8012',
+  'http://51.20.37.128:8013',
+  'http://51.20.37.128:8010',
+  'http://51.20.37.128:3404',
+  'http://51.20.37.128:5500',
+  'http://51.20.37.128:5502',
+  'http://51.20.37.128:8012',
+  'http://51.20.37.128:8013',
+  'http://51.20.37.128:8010',
+  process.env.FRONTEND_URL || 'http://51.20.37.128:8012',
 ];
 
 // Enhanced CORS setup
@@ -164,7 +164,7 @@ const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
   host: process.env.DB_HOST || 'postgres',
   database: process.env.DB_NAME || 'new_employee_db',
-  password: process.env.DB_PASSWORD || 'admin123',
+  password: process.env.DB_PASSWORD || 'admin321',
   port: process.env.DB_PORT || 5432,
   connectionTimeoutMillis: 10000,
   idleTimeoutMillis: 30000,
